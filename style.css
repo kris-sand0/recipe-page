@@ -1,0 +1,284 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font Imports */
+@font-face {
+    font-family: 'Young Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/static/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/static/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/static/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* CSS Variables for Colors */
+:root {
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+}
+
+/* Body Styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    background-color: var(--stone-100); /* Light background as per design */
+    color: var(--stone-600); /* Default text color */
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    padding: 20px; /* Add some padding around the card */
+}
+
+/* Recipe Card Layout */
+.recipe-card {
+    background-color: var(--white);
+    max-width: 750px; /* Adjust based on desktop design */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+/* Image Styling */
+.recipe-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Headings */
+h1 {
+    font-family: 'Young Serif', serif;
+    font-size: 2.5rem; /* Adjust as per design */
+    color: var(--stone-900);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Young Serif', serif;
+    font-size: 1.7rem; /* Adjust as per design */
+    color: var(--brown-800);
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    color: var(--stone-600);
+    margin-bottom: 20px;
+}
+
+/* Preparation Time Section */
+.preparation-time {
+    background-color: var(--rose-50);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.preparation-time h2 {
+    font-family: 'Outfit', sans-serif; /* Change font to Outfit */
+    font-weight: 700; /* Make it bold */
+    color: var(--rose-800);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.preparation-time ul {
+    list-style-type: none; /* Remove default bullet */
+    padding-left: 20px; /* Indent for custom bullet */
+}
+
+.preparation-time ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.preparation-time ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: var(--rose-800);
+    position: absolute;
+    left: 0;
+}
+
+/* Ingredients Section */
+.ingredients {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--stone-150);
+}
+
+.ingredients ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.ingredients ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.ingredients ul li::before {
+    content: '•';
+    color: var(--brown-800);
+    position: absolute;
+    left: 0;
+}
+
+/* Instructions Section */
+.instructions {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--stone-150);
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions ol li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.instructions ol li::marker {
+    color: var(--brown-800);
+    font-weight: bold;
+}
+
+/* Nutrition Section */
+.nutrition {
+    margin-bottom: 30px;
+}
+
+.nutrition table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition table tr {
+    border-bottom: 1px solid var(--stone-150);
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space items apart */
+    padding: 10px 0; /* Apply padding to the row */
+}
+
+.nutrition table tr:last-child {
+    border-bottom: none; /* No border for the last row */
+}
+
+.nutrition table td {
+    /* Remove padding from td as it's now on tr */
+    padding: 0;
+}
+
+.nutrition table td:first-child {
+    padding-left: 20px; /* Keep padding for the first child */
+}
+
+.nutrition table td:last-child {
+    color: var(--brown-800);
+    font-weight: 700;
+    /* No need for text-align: right; as flexbox handles it */
+}
+
+/* Attribution */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--stone-600);
+}
+.attribution a {
+    color: var(--brown-800);
+    text-decoration: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 0; /* Remove body padding on small screens */
+        align-items: flex-start; /* Align content to top */
+    }
+
+    .recipe-card {
+        max-width: 100%;
+        border-radius: 0; /* No border-radius on small screens */
+        padding: 0; /* Remove padding from card on small screens */
+        box-shadow: none; /* No shadow on small screens */
+    }
+
+    .recipe-card img {
+        border-radius: 0; /* No border-radius on image for full width */
+        margin-bottom: 20px;
+    }
+
+    .recipe-card > h1,
+    .recipe-card > p,
+    .recipe-card > section {
+        padding-left: 30px; /* Add padding to content inside card */
+        padding-right: 30px;
+    }
+
+    .recipe-card > section:last-of-type {
+        padding-bottom: 30px; /* Add padding to the last section */
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .preparation-time,
+    .ingredients,
+    .instructions,
+    .nutrition {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    .preparation-time {
+        padding: 20px;
+    }
+
+    .attribution {
+        margin-bottom: 20px;
+    }
+}
